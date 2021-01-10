@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="llt.lmxp">
+
+    <application>
+        <meta-data
+            android:name="xposedmodule"
+            android:value="true" />
+        <meta-data
+            android:name="xposeddescription"
+            android:value="LMXP" />
+        <meta-data
+            android:name="xposedminversion"
+            android:value="82" />
+
+    </application>
+
+</manifest>
