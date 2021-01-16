@@ -22,7 +22,7 @@ public class HookNetwork {
         XposedHelpers.findAndHookMethod("com.netspace.library.utilities.Utilities", realClassLoader, "getWifiSSID", Context.class, new XC_MethodReplacement() {
             @Override
             protected Object replaceHookedMethod(MethodHookParam param) throws Throwable {
-                return "RYZXX";
+                return "RYZZX";
             }
         });
         XposedHelpers.findAndHookMethod("com.netspace.library.utilities.Utilities", realClassLoader, "getWifiBSSID", Context.class, new XC_MethodReplacement() {

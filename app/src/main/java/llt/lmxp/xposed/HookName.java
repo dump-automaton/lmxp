@@ -36,8 +36,8 @@ public class HookName {
                         if(packageItemInfo.nonLocalizedLabel == null){
                             return;
                         }
-                        if (packageItemInfo.nonLocalizedLabel.equals("LMX")){
-                            packageItemInfo.nonLocalizedLabel = "hooked";
+                        if (packageItemInfo.nonLocalizedLabel.equals("少年派")){
+                            packageItemInfo.nonLocalizedLabel = "潲年派";
                         }
                     }
                 }

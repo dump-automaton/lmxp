@@ -14,7 +14,7 @@ public class Handler implements IXposedHookLoadPackage, IXposedHookZygoteInit {
 
     @Override
     public void initZygote(StartupParam startupParam) throws Throwable {
-        startupParam.
+
     }
 
     @Override
@@ -28,7 +28,10 @@ public class Handler implements IXposedHookLoadPackage, IXposedHookZygoteInit {
                     ClassLoader realClassLoader = realApplication.getClassLoader();
                     HookDialog.hookDialog(realClassLoader);
                     HookHuaweiMdm.hookHuaweiMdm(realClassLoader);
+                    HookLockScreen.hookLockScreen(realClassLoader);
+                    //LLT ONLY
                     HookNetwork.hookNetwork(realClassLoader);
+                    HookSSL.hookSslPinning(realClassLoader);
                 }
             });
         }
