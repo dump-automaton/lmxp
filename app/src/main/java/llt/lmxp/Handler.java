@@ -20,7 +20,9 @@ public class Handler implements IXposedHookLoadPackage, IXposedHookZygoteInit {
     @Override
     public void handleLoadPackage(XC_LoadPackage.LoadPackageParam lpparam) throws Throwable {
         HookName.hookName(lpparam.classLoader);
+        //DumpDex dumpDex = new DumpDex(lpparam.classLoader);
         if(lpparam.packageName.startsWith("com.netspace.")){
+
             XposedHelpers.findAndHookMethod("android.app.Instrumentation", lpparam.classLoader, "newApplication",ClassLoader.class, String.class, Context.class, new XC_MethodHook() {
                 @Override
                 protected void afterHookedMethod(MethodHookParam param) throws Throwable {
@@ -30,7 +32,7 @@ public class Handler implements IXposedHookLoadPackage, IXposedHookZygoteInit {
                     HookHuaweiMdm.hookHuaweiMdm(realClassLoader);
                     HookLockScreen.hookLockScreen(realClassLoader);
                     //LLT ONLY
-                    HookNetwork.hookNetwork(realClassLoader);
+                    //HookNetwork.hookNetwork(realClassLoader);
                     HookSSL.hookSslPinning(realClassLoader);
                 }
             });
